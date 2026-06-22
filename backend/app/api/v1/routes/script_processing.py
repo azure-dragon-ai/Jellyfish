@@ -165,6 +165,7 @@ async def divide_script(
         agent = ScriptDividerAgent(llm)
         result = agent.divide_script(script_text=request.script_text)
 
+        logger.debug(f"Script dividing result: {result}")
         if request.write_to_db:
             if not request.chapter_id:
                 raise HTTPException(status_code=400, detail=required_field("chapter_id", when="write_to_db=true"))
