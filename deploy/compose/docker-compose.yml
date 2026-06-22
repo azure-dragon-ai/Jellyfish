@@ -147,7 +147,7 @@ services:
         condition: service_completed_successfully
       mysql-init-sql:
         condition: service_completed_successfully
-    command: ["uv", "run", "celery", "-A", "app.core.celery_app:celery_app", "worker", "-l", "info"]
+    command: ["uv", "run", "celery", "-A", "app.core.celery_app:celery_app", "worker", "-l", "debug"]
 
   front:
     build:
