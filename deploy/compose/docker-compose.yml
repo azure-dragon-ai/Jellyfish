@@ -15,6 +15,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 30
+    restart: unless-stopped
 
   redis:
     image: redis:7
@@ -25,6 +26,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 30
+    restart: unless-stopped
 
   rustfs:
     image: rustfs/rustfs:latest
@@ -38,6 +40,7 @@ services:
       - "${RUSTFS_CONSOLE_PORT:-9001}:9001"
     volumes:
       - rustfs_data:/data
+    restart: unless-stopped
 
   backend-init-db:
     build:
@@ -117,6 +120,7 @@ services:
         condition: service_completed_successfully
       mysql-init-sql:
         condition: service_completed_successfully
+    restart: unless-stopped
 
   celery-worker:
     build:
@@ -148,6 +152,7 @@ services:
       mysql-init-sql:
         condition: service_completed_successfully
     command: ["uv", "run", "celery", "-A", "app.core.celery_app:celery_app", "worker", "-l", "debug"]
+    restart: unless-stopped
 
   front:
     build:
@@ -159,6 +164,7 @@ services:
       - "7788:80"
     depends_on:
       - backend
+    restart: unless-stopped
 
 volumes:
   mysql_data:
