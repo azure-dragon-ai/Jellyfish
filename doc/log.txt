@@ -1,0 +1,32 @@
+ × Failed to build `vllm-omni @ file:///mnt/c/Users/AI-Space001/vllm-omni`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `setuptools.build_meta.build_editable` failed (exit status: 1)
+
+      [stdout]
+      PyTorch not found, defaulting to CUDA installation
+      Loading requirements from: /mnt/c/Users/AI-Space001/vllm-omni/requirements/cuda.txt
+      Loaded 23 requirements for cuda
+      PyTorch not found, defaulting to CUDA installation
+      Generated version: 0.23.0rc2.dev149+gc45ac74d4
+      running egg_info
+      creating vllm_omni.egg-info
+      writing vllm_omni.egg-info/PKG-INFO
+      writing dependency_links to vllm_omni.egg-info/dependency_links.txt
+      writing entry points to vllm_omni.egg-info/entry_points.txt
+      writing requirements to vllm_omni.egg-info/requires.txt
+      writing top-level names to vllm_omni.egg-info/top_level.txt
+      writing manifest file 'vllm_omni.egg-info/SOURCES.txt'
+
+      [stderr]
+      /root/.cache/uv/builds-v0/.tmpqmSDX5/lib/python3.12/site-packages/setuptools_scm/_integration/version_inference.py:218:
+      UserWarning: version of None already set
+        warnings.warn(f"version of {self.dist_name} already set")
+      fatal: detected dubious ownership in repository at '/mnt/c/Users/AI-Space001/vllm-omni'
+      To add an exception for this directory, call:
+
+        git config --global --add safe.directory /mnt/c/Users/AI-Space001/vllm-omni
+      git introspection failed: fatal: detected dubious ownership in repository at
+      '/mnt/c/Users/AI-Space001/vllm-omni'
+
+
+hint: Build failures usually indicate a problem with the package or the build environment(AI-Space001) root@AI-Space001:
